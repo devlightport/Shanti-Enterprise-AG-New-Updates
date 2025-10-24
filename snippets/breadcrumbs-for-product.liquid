@@ -1,0 +1,126 @@
+<div class="self-breadcrumbs-for-product"></div>
+<script>
+  $(document).ready(function() {
+      var currentUrl = window.location.href;
+      var urlParts = currentUrl.split('/'); // Split the URL by slashes
+      var collections_var = urlParts[3];      
+      if(collections_var == 'collections'){
+        var collections_var_name = urlParts[4];
+        var collections_var_name_full = '/collections/'+collections_var_name;
+        //alert(collections_var_name);
+        $('ul.list-menu a[href="'+collections_var_name_full+'"]').each(function() {
+            var data_prolink = $(this).attr('data-prolink');
+            
+          if(data_prolink == 'third-link'){
+            
+            var first_third = $(this).parent().parent().parent().parent().parent().parent().attr('data-forcls');
+            var data_forclssecond = $(this).attr('data-forclssecond');
+            var data_forclsthird = $(this).attr('data-forclsthird');
+            var first_third_text = $('.'+first_third+'.list-menu-has-child a span').html();
+            var first_third_text_link = '/collections/'+first_third;
+            var second_third_text = $('.'+data_forclssecond+' span').html();
+            var second_third_text_link = '/collections/'+data_forclssecond;
+            var third_third_text = $('.'+data_forclsthird+' span').html();
+            var third_third_text_link = '/collections/'+data_forclsthird;
+            var first_third_text_trim = first_third_text.trim();
+            var second_third_text_trim = second_third_text.trim();
+            var third_third_text_trim = third_third_text.trim();
+            $('.self-breadcrumbs-for-product').html('<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs"><a href="/">Startseite</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+first_third_text_link+'">'+first_third_text_trim+'</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+second_third_text_link+'">'+second_third_text_trim+'</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+third_third_text_link+'">'+third_third_text_trim+'</a></nav>');
+          }else if(data_prolink == 'inside-inner-second-link'){
+            
+            var second_link_parent = $(this).parent().parent().parent().parent().attr('data-forcls');
+            var one_second_link = $('.'+second_link_parent+'.header__menu-item').attr('href');
+            var one_second_link_text = $('.'+second_link_parent+'.header__menu-item span').html();
+            var one_second_link_text_trim = one_second_link_text.trim();
+            
+            var second_link = $(this).attr('href');
+            var second_link_text = $('.'+collections_var_name+' span').html();
+            var second_link_text_trim = second_link_text.trim();
+            $('.self-breadcrumbs-for-product').html('<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs"><a href="/">Startseite</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+one_second_link+'">'+one_second_link_text_trim+'</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+second_link+'">'+second_link_text_trim+'</a></nav>');
+          
+          }else if(data_prolink == 'first-link'){
+            
+            var first_link = $(this).attr('href');
+            var first_link_text = $(this).attr('aria-label');
+            var first_link_text_trim = first_link_text.trim();
+            $('.self-breadcrumbs-for-product').html('<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs"><a href="/">Startseite</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+first_link+'">'+first_link_text_trim+'</a></nav>');
+            
+          }else if(data_prolink == 'not-inner-second-link'){
+            var not_second_link_parent = $(this).parent().parent().parent().parent().attr('data-forcls');
+            var one_not_second_link = $('.'+not_second_link_parent+'.header__menu-item').attr('href');
+            var one_not_second_link_text = $('.'+not_second_link_parent+'.header__menu-item span').html();
+            var one_not_second_link_text_trim = one_not_second_link_text.trim();
+            
+            var not_second_link = $(this).attr('href');
+            var not_second_link_text = $('.'+collections_var_name+' span').html();
+            var not_second_link_text_trim = not_second_link_text.trim();
+            $('.self-breadcrumbs-for-product').html('<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs"><a href="/">Startseite</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+one_not_second_link+'">'+one_not_second_link_text_trim+'</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+not_second_link+'">'+not_second_link_text_trim+'</a></nav>');
+          
+          }
+        });
+
+      }else{
+        /*var else_not_second_link = '{{ product.collections[0].url }}';
+        var else_not_second_link_text = '{{ product.collections[0].title }}';
+        var else_not_second_link_text_trim = else_not_second_link_text.trim();
+        $('.self-breadcrumbs-for-product').html('<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs"><a href="/">Startseite</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+else_not_second_link+'">'+else_not_second_link_text_trim+'</a></nav>');
+        */
+        var collections_var_name_sllit = '{{ product.collections[0].url }}';
+        var collections_var_name_sllit_urlParts = collections_var_name_sllit.split('/'); // Split the URL by slashes
+        var collections_var_split = collections_var_name_sllit_urlParts[2];
+        var collections_var_name = collections_var_split;
+        var collections_var_name_full = '/collections/'+collections_var_name;
+        //alert(collections_var_name);
+        $('ul.list-menu a[href="'+collections_var_name_full+'"]').each(function() {
+            var data_prolink = $(this).attr('data-prolink');
+            
+          if(data_prolink == 'third-link'){
+            
+            var first_third = $(this).parent().parent().parent().parent().parent().parent().attr('data-forcls');
+            var data_forclssecond = $(this).attr('data-forclssecond');
+            var data_forclsthird = $(this).attr('data-forclsthird');
+            var first_third_text = $('.'+first_third+'.list-menu-has-child a span').html();
+            var first_third_text_link = '/collections/'+first_third;
+            var second_third_text = $('.'+data_forclssecond+' span').html();
+            var second_third_text_link = '/collections/'+data_forclssecond;
+            var third_third_text = $('.'+data_forclsthird+' span').html();
+            var third_third_text_link = '/collections/'+data_forclsthird;
+            var first_third_text_trim = first_third_text.trim();
+            var second_third_text_trim = second_third_text.trim();
+            var third_third_text_trim = third_third_text.trim();
+            $('.self-breadcrumbs-for-product').html('<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs"><a href="/">Startseite</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+first_third_text_link+'">'+first_third_text_trim+'</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+second_third_text_link+'">'+second_third_text_trim+'</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+third_third_text_link+'">'+third_third_text_trim+'</a></nav>');
+          }else if(data_prolink == 'inside-inner-second-link'){
+            
+            var second_link_parent = $(this).parent().parent().parent().parent().attr('data-forcls');
+            var one_second_link = $('.'+second_link_parent+'.header__menu-item').attr('href');
+            var one_second_link_text = $('.'+second_link_parent+'.header__menu-item span').html();
+            var one_second_link_text_trim = one_second_link_text.trim();
+            
+            var second_link = $(this).attr('href');
+            var second_link_text = $('.'+collections_var_name+' span').html();
+            var second_link_text_trim = second_link_text.trim();
+            $('.self-breadcrumbs-for-product').html('<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs"><a href="/">Startseite</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+one_second_link+'">'+one_second_link_text_trim+'</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+second_link+'">'+second_link_text_trim+'</a></nav>');
+          
+          }else if(data_prolink == 'first-link'){
+            
+            var first_link = $(this).attr('href');
+            var first_link_text = $(this).attr('aria-label');
+            var first_link_text_trim = first_link_text.trim();
+            $('.self-breadcrumbs-for-product').html('<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs"><a href="/">Startseite</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+first_link+'">'+first_link_text_trim+'</a></nav>');
+            
+          }else if(data_prolink == 'not-inner-second-link'){
+            var not_second_link_parent = $(this).parent().parent().parent().parent().attr('data-forcls');
+            var one_not_second_link = $('.'+not_second_link_parent+'.header__menu-item').attr('href');
+            var one_not_second_link_text = $('.'+not_second_link_parent+'.header__menu-item span').html();
+            var one_not_second_link_text_trim = one_not_second_link_text.trim();
+            
+            var not_second_link = $(this).attr('href');
+            var not_second_link_text = $('.'+collections_var_name+' span').html();
+            var not_second_link_text_trim = not_second_link_text.trim();
+            $('.self-breadcrumbs-for-product').html('<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs"><a href="/">Startseite</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+one_not_second_link+'">'+one_not_second_link_text_trim+'</a><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-small" focusable="false"><path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><a href="'+not_second_link+'">'+not_second_link_text_trim+'</a></nav>');
+          
+          }
+        });  
+      }
+  });
+</script>

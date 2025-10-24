@@ -1,0 +1,62 @@
+{% if collection.metafields.custom.category_type_product == true %}
+  {% assign block_product =  'block_product' %}
+{% elsif collection.metafields.custom.category_type_product == false %}
+  {% assign block_catalog =  'block_catalog' %}
+{% else %}
+  {% assign block_product =  'block_product' %}
+{% endif %} 
+<div id="shopify-section-template--21171398770979__f21535e0-e4a9-4ea8-855b-28bf4d82f691" class="{{ block_catalog }} cu-our-col shopify-section index-section" style="display: none;">	
+	<script type="module" src="//shanti-enterprise-oliver-gupta.myshopify.com/cdn/shop/t/3/assets/video.js?v=158127293016324085231689161810" defer="defer"></script>
+	<div class="rich-text-template--21171398770979__f21535e0-e4a9-4ea8-855b-28bf4d82f691 text-center text-wrapper " id="">
+  		<div class="page-width" id="">
+		    <div class="grid " style="">
+		      <div class="grid__item medium-up--three-quarters medium-up--push-one-eighth">        
+		          <div class="larger-text section-header">
+		          	<h1 class=" subtitle subtitle-heading">{{ collection.title }}</h1>
+                    <p class="collection-description">{{ collection.description  | strip_html }}</p>
+		          </div>
+		          <div>
+		          	<div class="medium-up--push-one-eighth column-grid">
+						{% for link in linklists['main-menu'].links %}							
+								{% for sublink in link.links %}
+									{% assign coll1Handle = sublink.url | split: '/collections/' %}
+									{% assign coll1 = collections[coll1Handle[1]] %}
+                                        {% if link.url == collection.url %}
+    										<div class="column-grid__item medium-up--one-third small--none padding-grid__item--1eeae714-a510-4d5c-a700-6cc71bd8fe76 text-center " data-aos="row-of-3" style="clear:none!important; ">
+    											<div style="margin: 0 auto;  max-width: 650px; margin-bottom:15px;">
+    												<a href="{{ sublink.url }}">
+    													<div class="image-wrap text-spacing " style="height: 0; padding-bottom: 130.0%;">
+    														<img src="{{ collections[coll1Handle[1]].image | img_url: 'master' }}"">
+    													</div>          
+    						          				</a>          
+    						        			</div>
+    						          			<a href="{{ sublink.url }}" class="btn btn--secondary btn--outlined ">{{ sublink.title }}</a>        
+    						      			</div>
+                                        {% endif %}
+
+                                        {% if collections[coll1Handle[1]].url == collection.url %} 
+                                            {% for subsublink in sublink.links %}
+                                              {% assign coll2Handle = subsublink.url | split: '/collections/' %}
+                                              {% assign coll2 = collections[coll2Handle[1]] %}
+                                              
+          										<div class="column-grid__item medium-up--one-third small--none padding-grid__item--1eeae714-a510-4d5c-a700-6cc71bd8fe76 text-center " data-aos="row-of-3" style="clear:none!important; ">
+          											<div style="margin: 0 auto;  max-width: 650px; margin-bottom:15px;">
+          												<a href="{{ subsublink.url }}">
+          													<div class="image-wrap text-spacing " style="height: 0; padding-bottom: 130.0%;">
+          														<img src="{{ collections[coll2Handle[1]].image | img_url: 'master' }}"">
+          													</div>          
+          						          				</a>          
+          						        			</div>
+          						          			<a href="{{ subsublink.url }}" class="btn btn--secondary btn--outlined ">{{ subsublink.title }}</a>        
+          						      			</div>                                              
+                                            {% endfor %}
+                                        {% endif %}
+						      	{% endfor %}							
+						{% endfor %}
+		      		</div>
+		      	</div>
+				</div>                  
+		    </div>             
+  		</div>
+	</div>
+</div>

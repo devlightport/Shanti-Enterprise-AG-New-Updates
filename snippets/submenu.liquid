@@ -1,0 +1,74 @@
+<div class="our-custom-ly-cu">
+<ul
+	class="header__submenu list-menu list-menu--disclosure  motion-reduce color-background-1 list-unstyled"
+	role="list"
+	tabindex="-1"
+>
+  {% assign self_path = link.url %}
+  {% assign self_segments = self_path | split: '/' %}
+  {% assign self_collection_handle = self_segments[2] %}
+	{%- for childlink in link.links -%}
+      {% assign self_path_second = childlink.url %}
+      {% assign self_segments_second = self_path_second | split: '/' %}
+      {% assign self_collection_handle_second = self_segments_second[2] %}
+		<li
+			tabindex="-1"
+			class="{%- if childlink.links != blank -%}list-menu-has-child{%- endif -%}"
+		>
+			{%- if childlink.links == blank -%}
+				<a
+					href="{{ childlink.url }}"
+					{% if childlink.type == 'http_link' and settings.open_new_tab %}
+						target="_blank"
+					{% endif %}
+                  data-prolink="not-inner-second-link"
+					class="{{ self_collection_handle_second }} header__menu-item list-menu__item focus-inset {% if childlink.current %} header__menu-item--active{% endif %}"
+					{% if childlink.current %}
+						aria-current="page"
+					{% endif %}
+				>
+					<span>
+						{{ childlink.title | escape }}
+					</span>
+				</a>
+			{%- else -%}
+				<a href="{{ childlink.url }}" class="{{ self_collection_handle_second }} header__menu-item list-menu__item focus-inset cursor-default" data-prolink="inside-inner-second-link">
+					<span>
+						{{ childlink.title | escape }}
+					</span>
+					{% render 'icon-arrow-small' %}
+				</a>
+				<ul
+					class="header__submenu list-menu--disclosure list-menu motion-reduce color-background-1 list-unstyled"
+					tabindex="-1"
+				>
+					{%- for grandchildlink in childlink.links -%}
+                      {% assign self_path_third = grandchildlink.url %}
+                      {% assign self_segments_third = self_path_third | split: '/' %}
+                      {% assign self_collection_handle_third = self_segments_third[2] %}
+						<li>
+							<a
+								href="{{ grandchildlink.url }}"
+								{% if grandchildlink.type == 'http_link' and settings.open_new_tab %}
+									target="_blank"
+								{% endif %}
+                              data-forclssecond="{{ self_collection_handle_second }}"
+                              data-forclsthird="{{ self_collection_handle_third }}"
+								class="{{ self_collection_handle_third }} header__menu-item list-menu__item focus-inset{% if grandchildlink.current %} header__menu-item--active{% endif %}"
+								{% if grandchildlink.current %}
+									aria-current="page"
+								{% endif %}
+                              data-prolink="third-link"
+							>
+								<span>
+									{{ grandchildlink.title | escape }}
+								</span>
+							</a>
+						</li>
+					{%- endfor -%}
+				</ul>
+			{%- endif -%}
+		</li>
+	{%- endfor -%}
+</ul>
+</div>

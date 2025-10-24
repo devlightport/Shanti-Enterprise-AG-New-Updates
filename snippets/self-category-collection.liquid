@@ -1,0 +1,35 @@
+<div class="self-category-cu">
+  <h2 class="sidebar-sec-head">Weitere Kategorien</h2>
+  <div class="self-category-cu-inner">
+    <li>
+	<a href="{{ collection.url }}" data-forclssecond="leder" data-forclsthird="rundleder" class="rundleder header__menu-item list-menu__item focus-inset header__menu-item--active" aria-current="page" data-prolink="third-link">
+		<span>{{ collection.title }}</span>
+	</a>
+</li>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+      var currentUrl = window.location.href;
+      var urlParts = currentUrl.split('/'); // Split the URL by slashes
+      var collections_var = urlParts[3];      
+      if(collections_var == 'collections'){
+        var collections_var_name = urlParts[4];
+        var collections_var_name_full = '/collections/'+collections_var_name;
+        //alert(collections_var_name);
+        $('ul.list-menu a[href="'+collections_var_name_full+'"]').each(function() {
+            var data_prolink = $(this).attr('data-prolink');
+            var cat_link = $(this).attr('data-prolink');
+            
+          if(data_prolink == 'third-link'){
+            
+            var parent_cat = $(this).parent().parent('ul').html();
+            $('.self-category-cu-inner').html(parent_cat);  
+            
+          }
+        });
+
+      }
+  });
+</script>

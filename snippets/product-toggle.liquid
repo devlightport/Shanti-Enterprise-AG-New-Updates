@@ -1,0 +1,121 @@
+<style type="text/css">
+
+/* dd container */
+.dropdown {
+  display: inline-block;
+  position: relative;
+  outline: none;
+  margin: 10px;
+}
+
+/* button */
+.dropbtn {
+  padding: 12px 16px;
+  color: white;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  cursor: pointer;
+  transition: 0.35s ease-out;
+}
+
+/* dd content */
+.dropdown .dropdown-content {
+  position: absolute;
+  top: 50%;
+  background-color: #ffffff;
+  min-width: 120%;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 100000;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.35s ease-out;
+  overflow: scroll;
+  height: 400px;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  transition: 0.35s ease-out;
+}
+.dropdown-content a:hover {
+  background-color: #eaeaea;
+}
+
+/* show dd content */
+.dropdown:focus .dropdown-content {
+  outline: none;
+  transform: translateY(20px);
+  visibility: visible;
+  opacity: 1;
+}
+.dropbtn:hover, .dropdown:focus .dropbtn {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}
+
+/* mask to close menu by clicking on the button */
+.dropdown .db2 {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0; opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+}
+.dropdown:focus .db2 {
+  display: inline-block;
+}
+.dropdown .db2:focus .dropdown-content {
+  outline: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+  </style>
+<div class="dropdown" tabindex="1">
+  <i class="db2" tabindex="1"></i>
+  <a class="dropbtn">Produkte stöbern</a>
+   <div class="dropdown-content">
+      {% for product in collections.all.products %}
+        <a href="javascript:void(0)" onclick="get_collection_content('https://www.shanti-enterprise.ch{{ product.url }}');" data-href="{{ product.url }}">{{ forloop.index }} → {{ product.title }}</a><br>
+      {% endfor %}
+   </div>
+</div>
+
+<script type="text/javascript">
+	function get_collection_content(coll_link){ 
+		//alert(coll_link);
+        $.get(coll_link, function(data) {
+            $('body').removeClass('body-template-product');
+            $('body').removeClass('body-template-product');
+            $('body').addClass('body-template-collection');
+            $('body').addClass('body-template-collection');            
+            $('body').html(data); // This will now work properly
+
+            var intervalId_qu_coll = setInterval(function() {
+                var newAcfRows_qu_coll = jQuery(".notAuthorizedBox");
+                
+                //console.log("Checking for .notAuthorizedBox:", newAcfRows_qu_coll.length);
+                
+                if (newAcfRows_qu_coll.length > 0) {
+                    //alert('asd');
+                    var targetElement = jQuery(".card-information .notAuthorizedBox").last();
+                    
+                    if (targetElement.length > 0) {
+                        targetElement.remove();
+                        //console.log("Removed .notAuthorizedBox");
+                    } else {
+                        //console.log("No .notAuthorizedBox found inside .card-information");
+                    }
+            
+                    clearInterval(intervalId_qu_coll); // Stop checking once removed
+                }
+            }, 500);
+
+                
+        });
+    }
+</script>
+
+

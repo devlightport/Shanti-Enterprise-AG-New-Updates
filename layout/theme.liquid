@@ -1,0 +1,411 @@
+<!doctype html>
+<html
+	class="no-js"
+	data-scheme="{{ settings.color_scheme }}"
+	lang="{{ request.locale.iso_code }}"
+>
+	<head>
+		<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KKJXLC9');</script>
+<!-- End Google Tag Manager -->
+      <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="theme-color" content="">
+		<link rel="canonical" href="{{ canonical_url }}">
+		<link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+        
+      
+		{%- if settings.favicon != blank -%}
+			<link
+				rel="icon"
+				type="image/png"
+				href="{{ settings.favicon | img_url: '32x32' }}"
+			>
+		{%- endif -%}
+
+		{%- unless settings.type_header_font.system? -%}
+			<link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+		{%- endunless -%}
+
+		<title>{{ page_title }}</title>
+
+		{% if page_description %}
+			<meta name="description" content="{{ page_description | escape }}">
+		{% endif %}
+
+		{% render 'meta-tags' %}
+
+		<script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
+		<script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
+		<script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+		{%- if settings.quickview_button_type != 'none' -%}
+			<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+			<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+		{% endif %}
+
+		{{ content_for_header }}
+		
+		{% render 'vars' %}
+		
+		{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+		{{ 'base.css' | asset_url | stylesheet_tag }}
+
+		{%- if settings.predictive_search_enabled -%}
+			<link
+				rel="stylesheet"
+				href="{{ 'component-predictive-search.css' | asset_url }}"
+				media="print"
+				onload="this.media='all'"
+			>
+		{%- endif -%}
+
+		{%- unless settings.type_body_font.system? -%}
+			<link
+				rel="preload"
+				as="font"
+				href="{{ settings.type_body_font | font_url }}"
+				type="font/woff2"
+				crossorigin
+			>
+		{%- endunless -%}
+		{%- unless settings.type_header_font.system? -%}
+			<link
+				rel="preload"
+				as="font"
+				href="{{ settings.type_header_font | font_url }}"
+				type="font/woff2"
+				crossorigin
+			>
+		{%- endunless -%}
+
+		<script>
+			document.documentElement.className =
+				document.documentElement.className.replace('no-js', 'js');
+			if (Shopify.designMode) {
+				document.documentElement.classList.add('shopify-design-mode');
+			}
+		</script>
+
+		<script src="{{ 'jquery-3.6.0.js' | asset_url }}" defer="defer"></script>
+		<script
+			src="{{ 'swiper-bundle.min.js' | asset_url }}"
+			defer="defer"
+		></script>
+		<script src="{{ 'gsap.min.js' | asset_url }}" defer="defer"></script>
+		<script
+			src="{{ 'ScrollTrigger.min.js' | asset_url }}"
+			defer="defer"
+		></script>
+		{%- if request.page_type != 'search' and settings.enable_search_modal -%}
+			<script src="{{ 'search-modal.js' | asset_url }}" defer="defer"></script>
+		{%- endif -%}
+		<script src="{{ 'popup.js' | asset_url }}" defer="defer"></script>
+		{% if settings.show_back_to_top %}
+			<script src="{{ 'scroll-top.js' | asset_url }}" defer="defer"></script>
+		{% endif %}
+		{% comment %}{% if settings.show_color_swatch %}{% endcomment %}
+			<script src="{{ 'product-card.js' | asset_url }}" defer="defer"></script>
+		{% comment %}{% endif %}{% endcomment %}
+
+		<script>
+			let cscoDarkMode = {};
+
+			(function () {
+				const body = document.querySelector('html[data-scheme]');
+
+				cscoDarkMode = {
+					init: function (e) {
+						this.initMode(e);
+						window
+							.matchMedia('(prefers-color-scheme: dark)')
+							.addListener((e) => {
+								this.initMode(e);
+							});
+
+						window.addEventListener('load', () => {
+							document.querySelectorAll('.header__toggle-scheme').forEach(el => {
+								el.addEventListener('click', (e) => {
+									e.preventDefault();
+									if ('auto' === body.getAttribute('data-scheme')) {
+										if (
+											window.matchMedia('(prefers-color-scheme: dark)').matches
+										) {
+											cscoDarkMode.changeScheme('light', true);
+										} else if (
+											window.matchMedia('(prefers-color-scheme: light)').matches
+										) {
+											cscoDarkMode.changeScheme('dark', true);
+										}
+									} else {
+										if ('dark' === body.getAttribute('data-scheme')) {
+											cscoDarkMode.changeScheme('light', true);
+										} else {
+											cscoDarkMode.changeScheme('dark', true);
+										}
+									}
+								});
+							})
+						});
+					},
+					initMode: function (e) {
+						let siteScheme = false;
+						switch (
+							'{{ settings.color_scheme }}' // Field. User’s system preference.
+						) {
+							case 'dark':
+								siteScheme = 'dark';
+								break;
+							case 'light':
+								siteScheme = 'light';
+								break;
+							case 'system':
+								siteScheme = 'auto';
+								break;
+						}
+						if (siteScheme && siteScheme !== body.getAttribute('data-scheme')) {
+							this.changeScheme(siteScheme, false);
+						}
+					},
+					changeScheme: function (siteScheme, cookie) {
+						body.classList.add('scheme-toggled');
+						body.setAttribute('data-scheme', siteScheme);
+						if (cookie) {
+							localStorage.setItem('_color_schema', siteScheme);
+						}
+						setTimeout(() => {
+							body.classList.remove('scheme-toggled');
+						}, 100);
+					},
+				};
+			})();
+
+			cscoDarkMode.init();
+
+			document.addEventListener('shopify:section:load', function () {
+				setTimeout(() => {
+					cscoDarkMode.init();
+				}, 100);
+			});
+		</script>
+
+        <!-- self add links start -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="{{ 'custom-new.js' | asset_url }}" defer="defer"></script>
+        {{ 'custom-new.css' | asset_url | stylesheet_tag: preload: true }}
+        <script src="https://kit.fontawesome.com/3f5c755225.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>  
+
+      
+      {% if customer %}
+        <style>
+          wishlist-button-collection,
+          wishlist-button-block,
+          wishlist-link-floating{
+            display: block;
+          }
+          .header__wishlist,
+          .header__cart,
+          .quick-add,
+          .custom-add-cart,
+          .product-form,
+          .card__add-to-cart,
+          .price,
+          .hura-product-prices{
+            display: inline-block;
+          }
+        </style>
+      {% else %}
+        <style>
+          wishlist-button-collection,
+          wishlist-button-block,
+          wishlist-link-floating,
+          .header__wishlist,
+          .header__cart,
+          .quick-add,
+          .custom-add-cart,
+          .product-form,
+          .card__add-to-cart,
+          .price,
+          .hura-product-prices{
+            display: none !important;
+          }
+        </style>
+
+        <script type="text/javascript">
+          $(document).ready(function() {
+            var interval = setInterval(function() {
+                if ($('.hura-coblock').length) {
+                    // If the .card-information div exists, append the new div and clear the interval
+                    $('.hura-coblock').append('<div class="self-without-price notAuthorizedBox"><p class="notAuthorizedBoxText">Zugelassene Kunden können den Preis einsehen, sobald sie sich <strong><a class="loginLink" href="https://www.shanti-enterprise.ch/account/login" target="_blank">angemeldet</a></strong> haben oder sich hier <strong><a class="registrationLink" href="https://www.shanti-enterprise.ch/account/register" target="_blank">registrieren</a></strong>.</p></div>');
+                    clearInterval(interval);
+                }
+            }, 500);
+
+            var interval2 = setInterval(function() {
+                if ($('.card-information').length) {
+                    // If the .card-information div exists, append the new div and clear the interval
+                    $('.card-information').append('<div class="self-without-price notAuthorizedBox"><p class="notAuthorizedBoxText">Zugelassene Kunden können den Preis einsehen, sobald sie sich <strong><a class="loginLink" href="https://www.shanti-enterprise.ch/account/login" target="_blank">angemeldet</a></strong> haben oder sich hier <strong><a class="registrationLink" href="https://www.shanti-enterprise.ch/account/register" target="_blank">registrieren</a></strong>.</p></div>');
+                    clearInterval(interval2);
+                }
+            }, 500);
+            
+            });
+
+        </script>
+{% endif %}
+       {% if customer %}
+          <script type="text/javascript">
+            jQuery(document).ready(function ($) {  
+              document.cookie = "user_phone_cu_login=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; Secure; SameSite=Lax";
+            }); 
+          </script>
+        {% endif %}  
+        <!-- self add links end -->
+	</head>
+
+	<body class="body-template-{{ template.name }} body-template-{{ template | replace: '.', '-' }}">
+		<a class="skip-to-content-link button visually-hidden button--simple" href="#MainContent">
+			{{ 'accessibility.skip_to_text' | t }}
+		</a>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKJXLC9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+		{% sections 'header-group' %}
+		{% sections 'overlay-group' %}
+		{% if settings.show_breadcrumbs %}
+			{% render 'breadcrumbs' %}
+		{% endif %}
+		<main
+			id="MainContent"
+			class="content-for-layout focus-none"
+			role="main"
+			tabindex="-1"
+		>
+			{{ content_for_layout }}
+		</main>
+		{% sections 'footer-group' %}
+
+		{% if settings.show_back_to_top %}
+			{% render 'scroll-top' %}
+		{% endif %}
+
+		{%- if request.page_type != 'cart' and settings.cart_type == 'drawer' -%}
+			{%- render 'cart-drawer' -%}
+		{%- endif -%}
+
+
+
+		<ul hidden>
+			<li id="a11y-refresh-page-message">
+				{{ 'accessibility.refresh_page' | t }}
+			</li>
+		</ul>
+
+		<script>
+			{% capture content %}{% include 'quickview' %}{% endcapture %}
+			let content = {{ content | json }};
+		</script>
+
+		<script>
+			window.routes = {
+				cart_add_url: '{{ routes.cart_add_url }}',
+				cart_change_url: '{{ routes.cart_change_url }}',
+				cart_update_url: '{{ routes.cart_update_url }}',
+				cart_url: '{{ routes.cart_url }}',
+				predictive_search_url: '{{ routes.predictive_search_url }}'
+			};
+
+			window.cartStrings = {
+				error: `{{ 'sections.cart.cart_error' | t }}`,
+				quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t }}`,
+				empty: `{{ 'general.cart.empty_cart' | t }}`,
+				shop_now: `{{ 'customer.account.account_button_shop' | t }}`,
+				collections_url: `{{ routes.collections_url | sort_by: 'best-selling' }}`
+			}
+
+			window.variantStrings = {
+				addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+				soldOut: `{{ 'products.product.sold_out' | t }}`,
+				unavailable: `{{ 'products.product.unavailable' | t }}`,
+				unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`
+			}
+
+			window.theme = {
+				moneyFormat: {{ shop.money_format | json }},
+				quickviewText: `{{ settings.quickview }}`,
+				quickviewMore: `{{ 'general.card.view__more' | t }}`
+			}
+		</script>
+
+		{%- if settings.predictive_search_enabled -%}
+			<script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
+			<script
+				src="{{ 'predictive-search.js' | asset_url }}"
+				defer="defer"
+			></script>
+		{%- endif -%}
+
+
+
+    <!-- self add links start -->
+      
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.css">
+      <!-- jQuery CDN -->
+      <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <!-- slick Carousel CDN -->
+      <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+      <script>        
+        $('.section-template--24656865952123__multicolumn_eL4Pec-padding .multicolumn-list__wrapper').slick({
+          slidesToShow: 4,
+          infinite:true,
+          slidesToScroll: 1,
+          autoplay: false,
+          autoplaySpeed: 2000,
+          responsive: [
+            {
+              breakpoint: 991,
+              settings: {
+                slidesToShow: 3,
+              }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 2,
+              }
+            }
+          ]
+        });
+      </script>
+
+    <!-- self add links start -->
+
+
+      <script>
+        jQuery(document).ready(function(){
+          jQuery('.our-custom-ly-cu > ul.header__submenu > li').hover(function(){
+            // On hover
+            var cls = jQuery(this).attr('data-cls');
+            var bsk = jQuery(this).addClass('bsk');
+            var height = jQuery('.bsk .header__submenu').height();
+            var parent_height = jQuery(this).parent().parent().height();
+            var height_new = height + parent_height;
+            jQuery(this).parent().parent().height(height_new+'px');
+          }, function(){
+            // On hover out
+            jQuery(this).parent().parent().css('height', ''); // Reset the height
+            var bsk = jQuery(this).removeClass('bsk');
+          });
+        });
+      </script>
+  </body>
+</html>

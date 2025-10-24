@@ -1,0 +1,164 @@
+<form id="register-form-cus">
+  <div class="em-fie">
+    <div class="em-fie-top">
+    </div>
+    <div class="em-fie-bottom">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />  
+      <button type="button" id="send-otp">Sende Code</button>
+    </div>    
+  </div>
+  <div class="otp-fie">
+    <div class="otp-fie-top">
+    </div>
+    <div class="otp-fie-bottom">
+      <label for="otp">Einmalcode (OTP) hier eingeben:</label>
+      <input type="text" id="otp1" name="otp1" required />
+    </div>    
+  </div>
+  
+  <button type="submit" id="register-btn" disabled>Code verifizieren</button>
+</form>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+
+  function generateRandomCode() {
+      var names = ["Sandy", "Rocky", "Bobby", "Tommy", "Jimmy", "Mandy", "Andy"]; // Add more names if needed
+      var randomName = names[Math.floor(Math.random() * names.length)]; // Pick a random name
+      var randomNumber = Math.floor(Math.random() * 900) + 100; // Generates a number between 100 and 999
+      return randomName + "_" + randomNumber;
+  }
+  
+  jQuery(document).ready(function ($) {    
+    document.cookie = "register_otp_cu=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; Secure; SameSite=Lax";
+    $('#RegisterForm-email').prop("readonly", true);
+    $('#RegisterForm-email').parent().hide();
+    $('#CustomerPassword').prop("readonly", true);
+    $('#CustomerPassword').parent().hide();
+    $("#otp1").on("input", function() {
+        let value = $(this).val().replace(/\D/g, ''); // Remove non-numeric characters
+        if (value.length > 6) {
+            value = value.substring(0, 6); // Restrict to 6 digits
+        }
+        $(this).val(value);
+    });
+  });
+  jQuery(document).ready(function ($) {
+    //alert('lk');
+    $("#send-otp").click(function () {
+      $("#send-otp").addClass('send-otp-dis');
+      var email = $("#email").val();
+      if (email === "") {
+        $("#send-otp").removeClass('send-otp-dis');
+        $(".em-fie-top").removeClass("em-fie-top-su");
+        $(".em-fie-top").addClass("em-fie-top-er");
+        $('.em-fie-top').html('<p>Please enter an email address.</p>');
+        //alert("Please enter an email address.");
+        return;
+      }
+
+      $.ajax({
+        url: "https://p655033.mittwaldserver.info/shantishopify/send-otp.php",
+        type: "POST",
+        data: { email: email },
+        success: function (response) {
+          $("#send-otp").removeClass('send-otp-dis');
+          if (response.message === "yes") {
+            $(".em-fie-top").removeClass("em-fie-top-su");
+            $(".em-fie-top").addClass("em-fie-top-er");
+            $('.em-fie-top').html('<p>Ihr Kundenkonto besteht bereits, hier <a href="/account/login" style="color: red !important; text-decoration-color: red !important;">einloggen</a></p>');
+          }else if (response.message === "Invalid email format") {
+            $(".em-fie-top").removeClass("em-fie-top-su");
+            $(".em-fie-top").addClass("em-fie-top-er");
+            $('.em-fie-top').html('<p>Ungültiges E-Mail-Format</p>');
+          }else{
+            $(".em-fie-top").addClass("em-fie-top-su");
+            $(".em-fie-top").removeClass("em-fie-top-er");
+            $('.em-fie-top').html('<p>Einmal-Code erfolgreich an Ihr Mailkonto versandt</p>');
+            document.cookie = "register_otp_cu=" + response + "; path=/; Secure; SameSite=Lax";
+            $("#register-btn").prop("disabled", false);            
+            $("#register-btn").addClass("register-btn-show");
+          }
+            
+        },
+        error: function (xhr, status, error) {
+            $("#send-otp").removeClass('send-otp-dis');
+            console.log("AJAX Error:", xhr.responseText);
+            console.log("Status:", status);
+            console.log("Error:", error);
+            //alert("AJAX request failed! Check the console for details.");
+        }
+      });
+    });
+    function getCookie(name) {
+        let match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+        return match ? match[2] : null;
+    }
+    $("#register-form-cus").submit(function (e) {
+      e.preventDefault();
+      var email = $("#email").val();      
+      var otp = $("#otp1").val();
+      var otpValue = getCookie("register_otp_cu");      
+      if (otpValue === otp) {
+          //$(".otp-fie-top").addClass("otp-fie-top-su");
+          var randomCode = generateRandomCode();
+          $('#RegisterForm-email').val(email);
+          $('#CustomerPassword').val(randomCode);
+          $(".em-fie-top").removeClass("em-fie-top-su");
+          $(".em-fie-top").removeClass("em-fie-top-er");
+          $('.em-fie-top').html('</p>');
+        
+          $(".otp-fie-top").removeClass("otp-fie-top-er");
+          $('.otp-fie-top').html('');
+          $('#register-form-cus').hide();
+          $('#create_customer').show();
+          document.cookie = "register_otp_cu=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; Secure; SameSite=Lax";
+      } else {
+
+          $(".em-fie-top").removeClass("em-fie-top-su");
+          $(".em-fie-top").removeClass("em-fie-top-er");
+          $('.em-fie-top').html('</p>');
+          
+          //$(".otp-fie-top").removeClass("otp-fie-top-su");
+          $(".otp-fie-top").addClass("otp-fie-top-er");
+          $('.otp-fie-top').html('<p>OTP ungültig!</p>');
+      }
+      /*$.ajax({
+        url: "https://demo.stellans.com/grove/verify-otp.php",
+        type: "POST",
+        xhrFields: {
+            withCredentials: true 
+        },
+        data: { email: email, otp: otp },
+        success: function (response) {
+          if (response === "verified") {
+            alert("OTP Verified! You can now register.");
+            this.submit(); // Proceed with Shopify form submission
+          } else {
+            alert("Invalid OTP. Please try again.");
+          }
+        },
+      });*/
+    });
+  });
+</script>
+<style>
+  form#create_customer {
+      display: none;
+  }
+
+  button#send-otp,
+  button.register-btn-show{
+      cursor: pointer;
+  }
+
+  .create_customer_show{
+    display: block;
+  }
+
+  .send-otp-dis{
+    cursor: not-allowed !important;
+  }
+
+  
+</style>

@@ -1,0 +1,36 @@
+<nav class="header__menu">
+	{%- if section.settings.menu != blank -%}
+		<ul class="list-menu list-menu--inline list-unstyled" role="list">
+			{%- for link in section.settings.menu.links -%}
+                {% assign self_path = link.url %}
+                {% assign self_segments = self_path | split: '/' %}
+                {% assign self_collection_handle = self_segments[2] %}
+				<li data-forcls="{{ self_collection_handle }}" class="{{ self_collection_handle }} {% if link.links != blank %}list-menu-has-child{% endif %}{% if link.active %} current-link{% endif %}">
+						{%liquid
+							for block in section.blocks
+								assign menu_trigger = block.settings.menu_trigger | handle | strip
+								if link.links != blank or block.type == "mega_menu" and block.settings.additional_menu != blank and link.handle == menu_trigger
+									if link.handle == menu_trigger
+										render 'header-mega-menu' links: link.links, block: block , link: link
+										break
+									elsif forloop.last
+										render 'header-link' link: link
+										render 'submenu' link: link
+									endif
+								elsif forloop.last
+									render 'header-link' link: link
+								endif
+							else
+								if link.links != blank
+									render 'header-link' link: link
+									render 'submenu' link: link
+								else
+									render 'header-link' link: link
+								endif
+							endfor
+						%}
+				</li>
+			{%- endfor -%}
+		</ul>
+	{%- endif -%}
+</nav>

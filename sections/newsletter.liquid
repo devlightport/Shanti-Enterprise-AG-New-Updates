@@ -1,0 +1,210 @@
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+	{% render 'section-margin' %}
+{%- endstyle -%}
+{% if customer %}
+
+  <script>
+  jQuery(document).ready(function(){
+  jQuery('#shopify-section-template--23760434561403__17321875186aedb4af').addClass('formnewsshow-remove');
+ // jQuery('#app-embed-container-256219').addClass('formnewsshow');
+  });
+  </script>
+  {% assign newsletter_cl = 'newsletter_not_login_cu' %}
+{%  else %}
+
+    <script>
+
+jQuery(document).ready(function () {
+    setInterval(function () {
+        if (jQuery('#app-embed-container-256219').is(':visible')) {
+            jQuery('#app-embed-container-256219').hide(); // Hide the element
+        }
+    }, 500); // Check every 500ms
+});
+
+
+
+
+      
+  /*  jQuery(document).ready(function () {
+        const targetNode = document.body; // Observe the whole body or a specific parent element
+        const observer = new MutationObserver(function (mutationsList, observer) {
+            if (jQuery('#app-embed-container-256219').is(':visible')) {
+                jQuery('#app-embed-container-256219').hide(); // Hide the element
+            }
+        });
+    
+        observer.observe(targetNode, { childList: true, subtree: true });
+    });*/
+   
+  </script>
+
+
+
+  
+  {% assign newsletter_cl = 'newsletter_not_login_cu' %}
+{% endif %}
+<div style="display:none;" class="{{ newsletter_cl }} newsletter section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} background{% if section.settings.enable_border_top %} section_border_top{% endif %}{% if section.settings.enable_border_bottom %} section_border_bottom{% endif %}">
+{% if customer %}	
+  <div class="container">
+		<div class="newsletter__form">
+			<h2 class="newsletter__title title--section">
+				{{ section.settings.heading }}
+			</h2>
+			{%- if section.settings.text != blank -%}
+				<div class="newsletter__information richtext__content large-font">
+					{{ section.settings.text }}
+				</div>
+			{%- endif -%}
+			{% comment %} my self start {% endcomment %}
+          {% if customer %}
+{% comment %}
+  <form id="updateMetafieldForm">
+    <label for="geburtstag">Geburtstag<span class="form-asterisk">*</span></label>
+    <input id="birthdate_home" type="date" name="birthdate_home" style="display: none;">                                                          
+    <input type="text" id="birthdate_home_date" name="birthdate_home_date" placeholder="DD.MM.YYYY">
+    <input type="hidden" id="customer_id" name="customer_id" value="{{ customer.id }}">
+    <P class="err_msg birthdate_home_err_msg" style="display: none;">Eingabe erforderlich.</p>
+    <button type="submit">Anmelden!</button>
+    <p class="succ_msg" style="display: none;">Success</p>
+    <p class="erro_msg" style="display: none;">Failed</p>
+  </form>
+{% endcomment %}
+
+{% else %}
+  <p>Please log in to update your metafield.</p>
+{% endif %}
+
+          {% comment %} my self end {% endcomment %}
+          {%- if section.settings.newsletter_text != blank -%}
+				<div class="newsletter__text">
+					{{ section.settings.newsletter_text }}
+				</div>
+			{%- endif -%}
+		</div>
+	</div>
+{% endif %}
+</div>
+
+{% schema %}
+{
+	"name": "t:sections.newsletter.name",
+	"tag": "section",
+	"class": "spaced-section",
+	"enabled_on": {
+		"templates": ["*"],
+		"groups": ["footer"]
+	},
+	"settings": [
+		{
+			"type": "color_scheme",
+			"id": "color_scheme",
+			"default": "background-1",
+			"label": "t:sections.all.color_scheme.label"
+		},
+		{
+			"type": "inline_richtext",
+			"id": "heading",
+			"default": "Some heading",
+			"label": "t:sections.all.heading.label"
+		},
+		{
+			"type": "richtext",
+			"id": "text",
+			"label": "t:sections.all.text.label"
+		},
+		{
+			"type": "richtext",
+			"id": "newsletter_text",
+			"label": "t:sections.all.additional_text.label"
+		},
+		{
+			"type": "paragraph",
+			"content": "t:sections.newsletter.settings.paragraph.content"
+		},
+		{
+			"type": "header",
+			"content": "t:sections.all.section-margin.header.content"
+		},
+		{
+			"type": "select",
+			"id": "margin_top",
+			"options": [
+				{
+					"value": "no-indent",
+					"label": "t:sections.all.section-margin.options__1.label"
+				},
+				{
+					"value": "xs",
+					"label": "t:sections.all.section-margin.options__2.label"
+				},
+				{
+					"value": "s",
+					"label": "t:sections.all.section-margin.options__3.label"
+				},
+				{
+					"value": "m",
+					"label": "t:sections.all.section-margin.options__4.label"
+				},
+				{
+					"value": "l",
+					"label": "t:sections.all.section-margin.options__5.label"
+				}
+			],
+			"default": "m",
+			"label": "t:sections.all.section-margin.margin_top.label"
+		},
+		{
+			"type": "select",
+			"id": "margin_bottom",
+			"options": [
+				{
+					"value": "no-indent",
+					"label": "t:sections.all.section-margin.options__1.label"
+				},
+				{
+					"value": "xs",
+					"label": "t:sections.all.section-margin.options__2.label"
+				},
+				{
+					"value": "s",
+					"label": "t:sections.all.section-margin.options__3.label"
+				},
+				{
+					"value": "m",
+					"label": "t:sections.all.section-margin.options__4.label"
+				},
+				{
+					"value": "l",
+					"label": "t:sections.all.section-margin.options__5.label"
+				}
+			],
+			"default": "m",
+			"label": "t:sections.all.section-margin.margin_bottom.label"
+		},
+		{
+			"type": "header",
+			"content": "t:sections.all.border.header.content"
+		},
+		{
+			"type": "checkbox",
+			"id": "enable_border_top",
+			"default": false,
+			"label": "t:sections.all.border.border_enable_top.label"
+		},
+		{
+			"type": "checkbox",
+			"id": "enable_border_bottom",
+			"default": false,
+			"label": "t:sections.all.border.border_enable_bottom.label"
+		}
+	],
+	"presets": [
+		{
+			"name": "Newsletter"
+		}
+	]
+}
+{% endschema %}
