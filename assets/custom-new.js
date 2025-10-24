@@ -79,7 +79,7 @@ jQuery(document).ready(function($){
             $(".send-btn.otp-btn").after('<div class="toast-box-wrapper active cu-box-em"><div class="toast-content"><div class="toast-card error"><div class="toast-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 413.348 413.348" fill="red"><path d="M413.348 24.354L388.994 0l-182.32 182.32L24.354 0 0 24.354l182.32 182.32L0 388.994l24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg></div><div class="toast-card-content"><h6 class="toast-title">Please enter an email address.</h6></div><span class="toast-close-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 413.348 413.348"><path d="M413.348 24.354L388.994 0l-182.32 182.32L24.354 0 0 24.354l182.32 182.32L0 388.994l24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg></span></div></div></div>');
             
             /*setTimeout(function() {
-            	jQuery(".cu-box-em").remove();
+              jQuery(".cu-box-em").remove();
             }, 1000);*/
             return;
           }
@@ -95,12 +95,12 @@ jQuery(document).ready(function($){
               if (response.message === "no") {
                 $(".send-btn.otp-btn").after('<div class="toast-box-wrapper active cu-box-em"><div class="toast-content"><div class="toast-card error"><div class="toast-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 413.348 413.348" fill="red"><path d="M413.348 24.354L388.994 0l-182.32 182.32L24.354 0 0 24.354l182.32 182.32L0 388.994l24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg></div><div class="toast-card-content"><h6 class="toast-title">Ihr Kundenkonto existiert noch nicht. <a href="/account/register/" style="color: #d90429 !important; text-decoration-color: #d90429 !important;">Registrieren Sie sich hier</a></h6></div><span class="toast-close-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 413.348 413.348"><path d="M413.348 24.354L388.994 0l-182.32 182.32L24.354 0 0 24.354l182.32 182.32L0 388.994l24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg></span></div></div></div>');
                 /*setTimeout(function() {
-                	jQuery(".cu-box-em").remove();
+                  jQuery(".cu-box-em").remove();
                 }, 2000);*/
               }else if (response.message === "Invalid email format") {
                 $(".send-btn.otp-btn").after('<div class="toast-box-wrapper active cu-box-em"><div class="toast-content"><div class="toast-card error"><div class="toast-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 413.348 413.348" fill="red"><path d="M413.348 24.354L388.994 0l-182.32 182.32L24.354 0 0 24.354l182.32 182.32L0 388.994l24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg></div><div class="toast-card-content"><h6 class="toast-title">Please enter vaild email address.</h6></div><span class="toast-close-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 413.348 413.348"><path d="M413.348 24.354L388.994 0l-182.32 182.32L24.354 0 0 24.354l182.32 182.32L0 388.994l24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg></span></div></div></div>');
                 /*setTimeout(function() {
-                	jQuery(".cu-box-em").remove();
+                  jQuery(".cu-box-em").remove();
                 }, 1000);*/
               }else{
                 $('.send-btn.otp-btn').trigger('click');
@@ -150,15 +150,15 @@ jQuery(document).ready(function(){
   jQuery('.js-filter').removeAttr('open');
   /* for home page start */
   
-  $('.section-template--24656865952123__multicolumn_eL4Pec-padding style').remove();
-  $('.section-template--24656865952123__multicolumn_eL4Pec-padding').addClass('testi-slider-cu');
-  $('#shopify-section-template--24656865952123__rich_text_xEHX4W').addClass('after-banner-sec-cu');
-  $('#shopify-section-template--24656865952123__rich_text_z6y4nL').addClass('again-after-banner-sec-cu');
-  $('#shopify-section-template--24656865952123__image_with_text_Q7icgm').addClass('right-image-sixty-sec-cu');
-  $('#shopify-section-template--24656865952123__image_with_text_Rkencz').addClass('left-image-sixty-sec-cu');
-  $('#shopify-section-template--24656865952123__multicolumn').addClass('category-home-sec-cu');
-  $('#shopify-section-template--24656865952123__testimonials').addClass('testi-button-after-pro-cu');
-  $('#shopify-section-template--24656865952123__testimonials .testimonials__desc').after('<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-button-arrow"><path d="M8.22917 3.75L11.875 7.5M11.875 7.5L8.22917 11.25M11.875 7.5L3.125 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
+  $('.section-template--25264922886523__multicolumn_eL4Pec-padding style').remove();
+  $('.section-template--25264922886523__multicolumn_eL4Pec-padding').addClass('testi-slider-cu');
+  $('#shopify-section-template--25264922886523__rich_text_xEHX4W').addClass('after-banner-sec-cu');
+  $('#shopify-section-template--25264922886523__rich_text_z6y4nL').addClass('again-after-banner-sec-cu');
+  $('#shopify-section-template--25264922886523__image_with_text_Q7icgm').addClass('right-image-sixty-sec-cu');
+  $('#shopify-section-template--25264922886523__image_with_text_Rkencz').addClass('left-image-sixty-sec-cu');
+  $('#shopify-section-template--25264922886523__multicolumn').addClass('category-home-sec-cu');
+  $('#shopify-section-template--25264922886523__testimonials').addClass('testi-button-after-pro-cu');
+  $('#shopify-section-template--25264922886523__testimonials .testimonials__desc').after('<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-button-arrow"><path d="M8.22917 3.75L11.875 7.5M11.875 7.5L8.22917 11.25M11.875 7.5L3.125 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
 
   /* for home page end */
 
@@ -1623,3 +1623,4 @@ jQuery(document).ready(function() {
  
 
 /*  for newsletter end */
+
