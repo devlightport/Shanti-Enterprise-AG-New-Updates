@@ -4097,5 +4097,39 @@ section.shopify-section:has(.spec-pro-cu) {
 .spec-pro-cu .hura-column a.hura-product-link img {
     max-width: 60% !important;
 }
+.category-home-sec-cu .section-header__item h2 {
+    text-transform: uppercase;
+    font-size: 32px !important;
+    letter-spacing: 6px;
+    font-weight: 600 !important;
+}
+section.shopify-section.slideshow-section, section.after-banner-sec-cu .rich-text__blocks, section.again-after-banner-sec-cu.spaced-section, section.again-after-banner-sec-cu.spaced-section .rich-text__blocks {
+    background: #fff !important;
+}
+section.after-banner-sec-cu, .testi-button-after-pro-cu .testimonials {
+    background: #fff !important;
+}
+
+.after-banner-sec-cu h2.title--section.h2 {
+    margin-bottom: 45px;
+}
+.shopify-challenge__button--primary, .shopify-challenge__button--secondary, .button--primary, .button--secondary, .customer .button--primary, .customer .button--secondary, .shopify-payment-button__button {
+    border-radius: 0 !important;
+    background: #C00F0C !important;
+    box-shadow: none;
+    color: #fff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.2px !important;
+    font-weight: 400 !important;
+    border-radius: 100px !important;
+    font-size: 16px;
+    font-family: 'Inter';
+    line-height: 1;
+    border: 1px solid #C00F0C !important;
+}
+.shopify-challenge__button--primary:hover, .shopify-challenge__button--secondary:hover, .button--primary:hover, .button--secondary:hover, .customer .button--primary:hover, .customer .button--secondary:hover, .shopify-payment-button__button:hover {
+    background: #ffffff !important;
+    color: #C00F0C !important;
+}
 /* 25-10-2025 */
 /* new updates end */
