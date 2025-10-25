@@ -4077,6 +4077,22 @@ section.shopify-section:has(.spec-pro-cu) {
     border-radius: 8px;
     max-width: 100%;
 }
-
+.self-without-price p strong a:hover {
+    color: #C00F0C !important;
+}
+.hra-col-12:last-child {
+    z-index: -9999;
+    position: absolute;
+}
+section.shopify-section:has(.spec-pro-cu) {
+    padding-bottom: 0 !important;
+}
+.testi-button-after-pro-cu {
+    background: #fff !important;
+    padding: 0 !important;
+}
+.testi-button-after-pro-cu .testimonials, .testi-button-after-pro-cu .testimonials__wrapper {
+    background: #fff !important;
+}
 /* 25-10-2025 */
 /* new updates end */
