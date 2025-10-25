@@ -3977,6 +3977,7 @@ section.login-popup-overlay-show .sotp-widget .ol .login-inputBox input {
 }
 .header .header__menu-item {
     padding: 8px;
+    font-size: 20px;
 }
 .header {
     padding: 29px 0;
