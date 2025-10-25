@@ -4131,5 +4131,17 @@ section.after-banner-sec-cu, .testi-button-after-pro-cu .testimonials {
     background: #ffffff !important;
     color: #C00F0C !important;
 }
+.footer > .background {
+    background: #212121 !important;
+    color: #fff !important;
+}
+.footer__blocks-wrapper .footer-block {
+    border-right: 1px solid #858585 !important;
+}
+.footer > .background a[href="https://wa.link/lkgkal"] {
+    background-color: #C00F0C;
+    padding: 10px 20px !important;
+    border-radius: 100px;
+}
 /* 25-10-2025 */
 /* new updates end */
