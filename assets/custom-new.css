@@ -4143,5 +4143,13 @@ section.after-banner-sec-cu, .testi-button-after-pro-cu .testimonials {
     padding: 10px 20px !important;
     border-radius: 100px;
 }
+.footer > .background h5.footer-block__heading.subtitle {
+    font-size: 15px !important;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 30px;
+    font-family: 'Inter';
+    letter-spacing: 2.2px;
+}
 /* 25-10-2025 */
 /* new updates end */
