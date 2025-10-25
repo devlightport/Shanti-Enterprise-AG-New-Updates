@@ -4034,6 +4034,7 @@ section.shopify-section:has(.spec-pro-cu) {
     -ms-flex: 0 0 calc(33.33% - 12px);
     flex: 0 0 calc(33.33% - 12px);
     max-width: calc(33.33% - 12px);
+    flex-direction: column;
 }
 .container.spec-pro-cu .hra-row {
     padding-left: 0;
