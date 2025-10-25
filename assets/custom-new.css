@@ -42,7 +42,7 @@ body,
 .customer .button--secondary,
 .shopify-payment-button__button {
   border-radius: 0 !important;
-  background: #003456 !important;
+  background: #C00F0C !important;
   box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
   color: #fff !important;
   text-transform: uppercase !important;
@@ -57,7 +57,7 @@ body,
 .customer .button--secondary:hover,
 .shopify-payment-button__button:hover {
   background: #ffffff !important;
-  color: #003456 !important;
+  color: #C00F0C !important;
 }
 .header__submenu > li .header__menu-item:hover svg.icon {
   transform: rotate(0deg);
@@ -247,7 +247,7 @@ body,
   border: none;
 }
 .multicolumn .multicolumn-card__info a:hover {
-  background: #003456 !important;
+  background: #C00F0C !important;
   opacity: 1 !important;
   color: #fff !important;
 }
@@ -279,7 +279,7 @@ body,
   .tabs.tabs-section
   .tab__item-info-block
   a.button.button--primary:hover {
-  background: #003456 !important;
+  background: #C00F0C !important;
   color: #fff !important;
 }
 .shopify-section .tabs.tabs-section .tab__item-info-block h3,
@@ -443,7 +443,7 @@ section.shopify-section:has(.spec-pro-cu) {
   text-rendering: auto;
   line-height: 1;
   font-size: 20px;
-  color: #003456;
+  color: #C00F0C;
 }
 .testi-slider-cu .slick-slider button.slick-next:before {
   content: "\f054";
@@ -572,7 +572,7 @@ body.body-template-page-contact .row.contact-us .col-md-8 .map-main iframe {
 
 /* body.body-template-collection .collection-banner h1.h2,
 body.body-template-collection .collection-banner .collection-banner__desc {
-  color: #003456;
+  color: #C00F0C;
 } */
 body.body-template-collection .collection-banner .collection-banner-item-btns,
 .footer
@@ -609,15 +609,15 @@ body.body-template-collection .collection-banner .collection-banner-item-btns,
   color: #fff !important;
 }
 .product__media-icon {
-  background: #003456 !important;
+  background: #C00F0C !important;
   color: #fff !important;
 }
 .product__media-icon:hover svg {
-  color: #003456 !important;
+  color: #C00F0C !important;
 }
 .product__media-icon:hover {
   background: #fff !important;
-  color: #003456 !important;
+  color: #C00F0C !important;
 }
 .product-media-modal {
   background-color: rgb(255 255 255) !important;
@@ -698,8 +698,8 @@ a {
 }
 .product-form__controls-group input:checked:not(.disabled) + label {
   border-width: 2px;
-  border-color: #003456 !important;
-  background: #003456 !important;
+  border-color: #C00F0C !important;
+  background: #C00F0C !important;
   color: #fff !important;
   padding: 5.46px 15px 5.46px;
   margin: 0 4px 12px 0px;
@@ -736,7 +736,7 @@ fieldset.product-form__input .product-group-name span {
 }
 .shopify-section-header.header-overlay a.button--primary:hover {
   background: #fff !important;
-  color: #003456 !important;
+  color: #C00F0C !important;
 }
 /* .small-font {
   font-size: 16px;
@@ -883,7 +883,7 @@ section.shopify-section.spaced-section:has(.newsletter) {
 }
 .newsletter form .newsletter__input-group button.btn,
 .newsletter form input.button {
-  background: #003456 !important;
+  background: #C00F0C !important;
   border-radius: 0 !important;
   height: 57px !important;
   margin-left: 10px !important;
@@ -895,7 +895,7 @@ section.shopify-section.spaced-section:has(.newsletter) {
 }
 .newsletter form .newsletter__input-group button.btn, .newsletter form input.button:hover{
   background: #ffffff !important;
-  color: #003456 !important;
+  color: #C00F0C !important;
 }
 .newsletter form .newsletter__input-group label,
 .newsletter form label {
@@ -1065,7 +1065,7 @@ section.shopify-section:has(.spec-pro-cu) {
     flex-direction: row;
     flex-wrap: wrap;
     line-height: 1.2;
-    color: #003456;
+    color: #C00F0C;
     font-family: var(--font-text-card-family);
     font-style: var(--font-text-card-style);
     font-weight: var(--font-text-card-weight);
@@ -1166,7 +1166,7 @@ section.shopify-section:has(.spec-pro-cu) {
 }
 .right-image-sixty-sec-cu h2.section-header__title.title--section a:hover,
 .left-image-sixty-sec-cu h2.section-header__title.title--section a:hover{
-    background: #003456 !important;
+    background: #C00F0C !important;
     color: #fff !important;
 }
 .right-image-sixty-sec-cu .image-with-text__grid {
@@ -1216,7 +1216,7 @@ section.shopify-section:has(.spec-pro-cu) {
   border: none !important;
 }
 .testi-button-after-pro-cu .testimonials__item-block:hover a {
-    color: #003456 !important;
+    color: #C00F0C !important;
 }
 .image-with-text .image-with-text__media-item .image-with-text__media,
 section.left-image-sixty-sec-cu .image-with-text.section_border_bottom {
@@ -1338,7 +1338,7 @@ body.body-template-page main .page-header h1 {
     margin-bottom: 0 !important;
 }
 .customer .order-table .tbody:not(div):hover span {
-    color: #003456 !important;
+    color: #C00F0C !important;
     opacity: 100% !important;
 }
 .customer .small-font {
@@ -1386,7 +1386,7 @@ body.body-template-page main .page-header h1 {
     background: #fff !important;
 }
 .field input[type=checkbox]:checked+label b {
-    background-color: #003456 !important;
+    background-color: #C00F0C !important;
 }
 .addresses .address-cancel,
 .customer button.button-address-delete {
@@ -1716,8 +1716,8 @@ body.body-template-page.body-template-page .rte .image-container a {
 .dashanti-main .dashanti-fourth-section .page-width .left-sec .storeify-formbuilder .storeify-foooter-frm button, 
   .dashanti-main .dashanti-fourth-section .page-width #storeify_content_formbuilder_13994 .storeify-submit-btn,
   .shopify-challenge__container input.shopify-challenge__button.btn {
-    background-color: #003456 !important;
-    background: #003456 !important;
+    background-color: #C00F0C !important;
+    background: #C00F0C !important;
     border-radius: 0;
     height: 57px;
     margin-left: 10px;
@@ -1731,7 +1731,7 @@ body.body-template-page.body-template-page .rte .image-container a {
   .shopify-challenge__container input.shopify-challenge__button.btn:hover{
     background-color: #FFF !important;
     background: #FFF !important;
-    color: #003456 !important;
+    color: #C00F0C !important;
     box-shadow: 0 4px 4px #00000040;
 }
 .dashanti-main .dashanti-fourth-section .page-width #storeify_content_formbuilder_13994 .storeify-foooter-frm.storeify-text-align-1 {
@@ -1829,7 +1829,7 @@ span.form-asterisk {
 }
 
 .field__range::-webkit-slider-thumb {
-  box-shadow: inset 0 0 0 0.7rem #003456 !important;
+  box-shadow: inset 0 0 0 0.7rem #C00F0C !important;
 }
 .badge {
     background: #f7f7f7 !important;
@@ -1847,18 +1847,18 @@ cart-remove-button button, facet-remove a.facets__reset {
     color: #fff !important;
 }
 .product__media-list .swiper-btn {
-    background: #003456 !important;
+    background: #C00F0C !important;
     color: #fff !important;
       box-shadow: 0 4px 4px #00000040;
 }
 
 .product__media-list .swiper-btn:hover {
     background: #ffffff !important;
-    color: #003456 !important;
+    color: #C00F0C !important;
   box-shadow: 0 4px 4px #00000040;
 }
 .product__media-list .swiper-btn:hover svg {
-    color: #003456 !important;
+    color: #C00F0C !important;
 }
 
 .product-form__submit, .product__media-icon {
@@ -1866,10 +1866,10 @@ cart-remove-button button, facet-remove a.facets__reset {
 }
 
 .product__media-icon:hover svg {
-  color: #003456 !important;
+  color: #C00F0C !important;
 }
 .share-buttons__item .icon {
-    color: #003456;
+    color: #C00F0C;
 }
 .share-buttons__item .icon:hover {
     opacity: .7;
@@ -2170,14 +2170,14 @@ fieldset.product-form__input {
     top: unset !important;
 }
 .persistentcart_icn_circle, wishlist-link-floating .wk-button {
-    background: #003456 !important;
+    background: #C00F0C !important;
     color: #fff !important;
 }
 .persistentcart_actions .follow_group .social-icons a {
-    background: #003456 !important;
+    background: #C00F0C !important;
 }
 .persistentcart_actions {
-    border-bottom: 3px solid #003456 !important;
+    border-bottom: 3px solid #C00F0C !important;
 }
 .header__details svg {
     width: 20px;
@@ -2225,8 +2225,8 @@ fieldset.product-form__input {
 }
 .container.product.row .product__info-wrapper button.wk-button {
     background: #fff;
-    border: 1px solid #003456;
-    color: #003456;
+    border: 1px solid #C00F0C;
+    color: #C00F0C;
     box-shadow: 0 4px 4px #00000040 !important;
     margin-top: 10px;
     font-size: calc(var(--font-button-scale)* 1rem);
@@ -2237,7 +2237,7 @@ fieldset.product-form__input {
   min-height: 42px;
 }
 .container.product.row .product__info-wrapper button.wk-button:hover {
-    background: #003456 !important;
+    background: #C00F0C !important;
     color: #fff !important;
 }
 .uploadcare--menu__items > .uploadcare--menu__item.uploadcare--menu__item_tab_file {
@@ -2257,7 +2257,7 @@ fieldset.product-form__input {
     height: 20px;
 }
 .card--product button:hover svg * {
-    fill: #003456 !important;
+    fill: #C00F0C !important;
 }
 .card--product button:hover {
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
@@ -2325,7 +2325,7 @@ fieldset.product-form__input {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #003456;
+    background: #C00F0C;
     color: #fff;
     font-size: 20px;
     border-radius: 5px;
@@ -2385,7 +2385,7 @@ fieldset.product-form__input {
     background-color: transparent;
 }
 .left-input-article-search-di > div > p:hover{
-    color: #003456;
+    color: #C00F0C;
 }
 
 .get_product_arti li {
@@ -2470,7 +2470,7 @@ fieldset.product-form__input {
     left: 10px;
 }
 .left-search-div input#myCheckbox:checked:before {
-    background: #003456;
+    background: #C00F0C;
 }
 .right-search-div {
     width: 75%;
@@ -2493,7 +2493,7 @@ fieldset.product-form__input {
     justify-content: center;
     font-family: var(--fontButtonPrimary),var(--fontHeaderFallback);
     font-size: 14px;
-    background: #003456;
+    background: #C00F0C;
     text-transform: uppercase;
     font-weight: 400;
     padding: 7px 20px;
@@ -2567,7 +2567,7 @@ fieldset.product-form__input {
     justify-content: center;
     font-family: var(--fontButtonPrimary), var(--fontHeaderFallback);
     font-size: 14px;
-    background: #003456;
+    background: #C00F0C;
     text-transform: uppercase;
     font-weight: 400;
     padding: 7px 20px;
@@ -2607,13 +2607,13 @@ fieldset.product-form__input {
     max-width: 100%;
 }
 .header-top-self .header-top__right a.header__account__register:hover {
-    background: #003456 !important;
+    background: #C00F0C !important;
     color: #ffffff !important;
   opacity: 1;
 }
 .header-top-self .header-top__right a.header__account__register {
     border-radius: 0 !important;
-    color: #003456 !important;
+    color: #C00F0C !important;
     background: #ffffff !important;
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
     text-transform: uppercase !important;
@@ -2647,7 +2647,7 @@ fieldset.product-form__input {
     font-size: calc(var(--font-button-scale)* 1rem);
     text-transform: uppercase;
     font-weight: 400;
-    background: #003456;
+    background: #C00F0C;
     color: #fff;
   margin-top: 15px;
 }
@@ -2662,7 +2662,7 @@ fieldset.product-form__input {
 .container.product.row .product__info-wrapper form button.add_pro_bulk:hover {
     background: #fff !important;
     box-shadow: 0 4px 4px #00000040;
-    color: #003456;
+    color: #C00F0C;
 }
 .loader_ikg_search {
     position: absolute;
@@ -2742,7 +2742,7 @@ body .shopify-section-header.header-overlay.color-inverse .header__search {
     letter-spacing: 0.2px !important;
     font-weight: 400 !important;
     border-radius: 0 !important;
-    background: #003456 !important;
+    background: #C00F0C !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2774,7 +2774,7 @@ body .shopify-section-header.header-overlay.color-inverse .header__search {
     z-index: 9;
     width: 35px;
     height: 35px;
-    background: #003456 !important;
+    background: #C00F0C !important;
 }
 .container.spec-pro-cu .hra-col-lg-3 b.loading-overlay__spinner svg.spinner * {
     stroke: #fff;
@@ -2787,7 +2787,7 @@ body .shopify-section-header.header-overlay.color-inverse .header__search {
       box-shadow: 0 4px 4px #00000040;
 }
 .container.spec-pro-cu .hra-col-lg-3 span.custom-add-cart:hover svg path {
-  fill: #003456 !important;
+  fill: #C00F0C !important;
 }
 @media (max-width: 767.98px) {
 .container.spec-pro-cu .hra-row {
@@ -2990,7 +2990,7 @@ body.body-template-collection .index-section .grid .medium-up--three-quarters .c
     font-weight: 200 !important;
     color: #fff !important;
     padding: 0px 10px !important;
-    background: #003456 !important;
+    background: #C00F0C !important;
     border-radius: 0;
     font-family: var(--font-heading-family);
     font-style: var(--font-heading-style);
@@ -3072,7 +3072,7 @@ body.body-template-collection .index-section .grid .medium-up--three-quarters .s
 
 .newsletter__form form button {
     border-radius: 0 !important;
-    background: #003456 !important;
+    background: #C00F0C !important;
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
     color: #fff !important;
     text-transform: uppercase !important;
@@ -3102,7 +3102,7 @@ body.body-template-collection .index-section .grid .medium-up--three-quarters .s
 }
 .newsletter__form form button:hover {
     background: #ffffff !important;
-    color: #003456 !important;
+    color: #C00F0C !important;
 }
 .newsletter form {
     display: flex !important;
@@ -3303,7 +3303,7 @@ body.body-template-list-collections.body-template-list-collections section.shopi
     font-weight: 200 !important;
     color: #fff !important;
     padding: 0px 10px !important;
-    background: #003456 !important;
+    background: #C00F0C !important;
     border-radius: 0;
     font-family: var(--font-heading-family);
     font-style: var(--font-heading-style);
@@ -3532,7 +3532,7 @@ button#mo-otp-toggle-popup-button {
     bottom: 8rem;
     margin: auto;
     border-radius: 0 !important;
-    background: #003456 !important;
+    background: #C00F0C !important;
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
     color: #fff !important;
     text-transform: uppercase !important;
@@ -3550,7 +3550,7 @@ button#mo-otp-toggle-popup-button {
 
 button#mo-otp-toggle-popup-button:hover {
     background: #ffffff !important;
-    color: #003456 !important;
+    color: #C00F0C !important;
 }
 section.spaced-section > .container > section > div:has(button#mo-otp-toggle-popup-button) {
     position: relative;
@@ -3594,7 +3594,7 @@ section.spaced-section > .container > section > div:has(button#mo-otp-toggle-pop
 }
 .customer.login.register form#register-form-cus .em-fie .em-fie-bottom button, .customer.login.register form#register-form-cus button#register-btn {
     border-radius: 0 !important;
-    background: #003456 !important;
+    background: #C00F0C !important;
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
     color: #fff !important;
     text-transform: uppercase !important;
@@ -3649,7 +3649,7 @@ button#mo-otp-toggle-popup-button {
 
 .customer.login.register form#register-form-cus .em-fie .em-fie-bottom button:hover, .customer.login.register form#register-form-cus button#register-btn:hover{
         background: #ffffff !important;
-    color: #003456 !important;
+    color: #C00F0C !important;
 }
 .customer.login.register form#register-form-cus .em-fie .em-fie-bottom button, .customer.login.register form#register-form-cus button#register-btn{
 border: none !important;
@@ -3657,7 +3657,7 @@ border: none !important;
 
 div#mo-otp-login-popup button {
     border-radius: 0 !important;
-    background: #003456 !important;
+    background: #C00F0C !important;
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
     color: #fff !important;
     text-transform: uppercase !important;
@@ -3675,7 +3675,7 @@ div#mo-otp-login-popup button {
 
 div#mo-otp-login-popup button:hover {
         background: #ffffff !important;
-    color: #003456 !important;
+    color: #C00F0C !important;
 }
 
 .customer.login.register form#register-form-cus button#register-btn {
@@ -3736,7 +3736,7 @@ button#mo-otp-toggle-popup-button {
     top: 13rem;
     margin: auto;
     border-radius: 0 !important;
-    background: #003456 !important;
+    background: #C00F0C !important;
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
     color: #fff !important;
     text-transform: uppercase !important;
@@ -3801,7 +3801,7 @@ button.custom-verify-bu-click,
 section.login-popup-overlay-show .sotp-widget button {
     position: relative;
     border-radius: 0 !important;
-    background: #003456 !important;
+    background: #C00F0C !important;
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%) !important;
     color: #fff !important;
     text-transform: uppercase !important;
@@ -3868,7 +3868,7 @@ button.custom-verify-bu-click.custom-verify-bu-click-load:after{
     max-width: 624px;
     margin: auto;
     border-radius: 0 !important;
-    background: #003456 !important;
+    background: #C00F0C !important;
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
     color: #fff !important;
     text-transform: uppercase !important;
@@ -3888,7 +3888,7 @@ button.custom-verify-bu-click.custom-verify-bu-click-load:after{
 button.custom-verify-bu-click:hover,
 section.login-popup-overlay-show .sotp-widget button:hover{
     background: #ffffff !important;
-    color: #003456 !important;
+    color: #C00F0C !important;
 }
 .login-cu-new_bu {
     margin: 2.4rem 0 !important;
