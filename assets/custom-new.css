@@ -4009,5 +4009,11 @@ section.login-popup-overlay-show .sotp-widget .ol .login-inputBox input {
     opacity: 1 !important;
     color: #fff !important;
 }
+.category-home-sec-cu .multicolumn .multicolumn-card__image-wrapper {
+    border-radius: 8px;
+}
+section.shopify-section:has(.spec-pro-cu) {
+    background: #fff !important;
+}
 /* 25-10-2025 */
 /* new updates end */
