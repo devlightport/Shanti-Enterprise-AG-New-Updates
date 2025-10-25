@@ -3969,3 +3969,19 @@ section.login-popup-overlay-show .sotp-widget .ol .login-inputBox input {
     height: 45px;
 }
 /* 04-04-2025 end */
+
+
+/* 25-10-2025 new updates */
+
+.header .list-menu--inline {
+    justify-content: end;
+}
+.header .header__menu-item {
+    padding: 8px;
+}
+.header {
+    padding: 32px 0;
+}
+
+
+/* 25-10-2025 new updates */
