@@ -4031,9 +4031,9 @@ section.shopify-section:has(.spec-pro-cu) {
     border: 1px solid #D9D9D9 !important;
     padding: 24px !important;
     border-radius: 8px;
-    -ms-flex: 0 0 calc(25% - 12px);
-    flex: 0 0 calc(25% - 12px);
-    max-width: calc(25% - 12px);
+    -ms-flex: 0 0 calc(33.33% - 12px);
+    flex: 0 0 calc(33.33% - 12px);
+    max-width: calc(33.33% - 12px);
 }
 .container.spec-pro-cu .hra-row {
     padding-left: 0;
