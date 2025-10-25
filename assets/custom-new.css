@@ -3981,6 +3981,10 @@ section.login-popup-overlay-show .sotp-widget .ol .login-inputBox input {
 .header {
     padding: 29px 0;
 }
+.slideshow__wrapper.swiper-wrapper .slideshow-swiper__slide .container .home-vertival-btn-cu {
+    top: 5rem;
+    margin: 0;
+}
 
 /* 25-10-2025 */
 /* new updates end */
