@@ -4097,7 +4097,8 @@ section.shopify-section:has(.spec-pro-cu) {
 .spec-pro-cu .hura-column a.hura-product-link img {
     max-width: 60% !important;
 }
-.category-home-sec-cu .section-header__item h2 {
+.category-home-sec-cu .section-header__item h2,
+.spec-pro-cu h2 {
     text-transform: uppercase;
     font-size: 32px !important;
     letter-spacing: 6px;
