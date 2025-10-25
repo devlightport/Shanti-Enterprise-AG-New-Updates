@@ -4110,7 +4110,9 @@ section.shopify-section.slideshow-section, section.after-banner-sec-cu .rich-tex
 section.after-banner-sec-cu, .testi-button-after-pro-cu .testimonials {
     background: #fff !important;
 }
-
+.after-banner-sec-cu h2.title--section.h2 p {
+    color: #BE8857 !important;
+}
 .after-banner-sec-cu h2.title--section.h2 {
     margin-bottom: 45px;
 }
