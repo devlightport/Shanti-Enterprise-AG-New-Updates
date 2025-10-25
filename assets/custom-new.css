@@ -4094,5 +4094,8 @@ section.shopify-section:has(.spec-pro-cu) {
 .testi-button-after-pro-cu .testimonials, .testi-button-after-pro-cu .testimonials__wrapper {
     background: #fff !important;
 }
+.spec-pro-cu .hura-column a.hura-product-link img {
+    max-width: 60% !important;
+}
 /* 25-10-2025 */
 /* new updates end */
