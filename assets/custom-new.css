@@ -4069,6 +4069,14 @@ section.shopify-section:has(.spec-pro-cu) {
 .self-without-price p strong {
     font-weight: 400;
 }
+.self-without-price {
+    padding: 0;
+    background: none;
+    white-space: pre-line;
+    border: none !important;
+    border-radius: 8px;
+    max-width: 100%;
+}
 
 /* 25-10-2025 */
 /* new updates end */
