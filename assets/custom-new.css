@@ -4114,7 +4114,8 @@ section.after-banner-sec-cu, .testi-button-after-pro-cu .testimonials {
 .after-banner-sec-cu h2.title--section.h2 {
     margin-bottom: 45px;
 }
-.shopify-challenge__button--primary, .shopify-challenge__button--secondary, .button--primary, .button--secondary, .customer .button--primary, .customer .button--secondary, .shopify-payment-button__button {
+.shopify-challenge__button--primary, .shopify-challenge__button--secondary, .button--primary, .button--secondary, .customer .button--primary, .customer .button--secondary, .shopify-payment-button__button,
+.right-image-sixty-sec-cu h2.section-header__title.title--section a, .left-image-sixty-sec-cu h2.section-header__title.title--section a {
     border-radius: 0 !important;
     background: #C00F0C !important;
     box-shadow: none;
@@ -4128,7 +4129,8 @@ section.after-banner-sec-cu, .testi-button-after-pro-cu .testimonials {
     line-height: 1;
     border: 1px solid #C00F0C !important;
 }
-.shopify-challenge__button--primary:hover, .shopify-challenge__button--secondary:hover, .button--primary:hover, .button--secondary:hover, .customer .button--primary:hover, .customer .button--secondary:hover, .shopify-payment-button__button:hover {
+.shopify-challenge__button--primary:hover, .shopify-challenge__button--secondary:hover, .button--primary:hover, .button--secondary:hover, .customer .button--primary:hover, .customer .button--secondary:hover, .shopify-payment-button__button:hover,
+.right-image-sixty-sec-cu h2.section-header__title.title--section a:hover, .left-image-sixty-sec-cu h2.section-header__title.title--section a:hover {
     background: #ffffff !important;
     color: #C00F0C !important;
 }
@@ -4151,6 +4153,12 @@ section.after-banner-sec-cu, .testi-button-after-pro-cu .testimonials {
     margin-bottom: 30px;
     font-family: 'Inter';
     letter-spacing: 2.2px;
+}
+.testi-button-after-pro-cu .testimonials__item-block:hover a {
+    color: #C00F0C !important;
+}
+.testi-button-after-pro-cu .testimonials__item-block:hover svg.icon path {
+    stroke: #C00F0C !important;
 }
 /* 25-10-2025 */
 /* new updates end */
