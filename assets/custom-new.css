@@ -4115,7 +4115,8 @@ section.after-banner-sec-cu, .testi-button-after-pro-cu .testimonials {
     margin-bottom: 45px;
 }
 .shopify-challenge__button--primary, .shopify-challenge__button--secondary, .button--primary, .button--secondary, .customer .button--primary, .customer .button--secondary, .shopify-payment-button__button,
-.right-image-sixty-sec-cu h2.section-header__title.title--section a, .left-image-sixty-sec-cu h2.section-header__title.title--section a {
+.right-image-sixty-sec-cu h2.section-header__title.title--section a, .left-image-sixty-sec-cu h2.section-header__title.title--section a,
+body.body-template-collection .index-section .grid .medium-up--three-quarters .column-grid .column-grid__item a.btn {
     border-radius: 0 !important;
     background: #C00F0C !important;
     box-shadow: none;
@@ -4130,7 +4131,8 @@ section.after-banner-sec-cu, .testi-button-after-pro-cu .testimonials {
     border: 1px solid #C00F0C !important;
 }
 .shopify-challenge__button--primary:hover, .shopify-challenge__button--secondary:hover, .button--primary:hover, .button--secondary:hover, .customer .button--primary:hover, .customer .button--secondary:hover, .shopify-payment-button__button:hover,
-.right-image-sixty-sec-cu h2.section-header__title.title--section a:hover, .left-image-sixty-sec-cu h2.section-header__title.title--section a:hover {
+.right-image-sixty-sec-cu h2.section-header__title.title--section a:hover, .left-image-sixty-sec-cu h2.section-header__title.title--section a:hover,
+body.body-template-collection .index-section .grid .medium-up--three-quarters .column-grid .column-grid__item a.btn:hover {
     background: #ffffff !important;
     color: #C00F0C !important;
 }
