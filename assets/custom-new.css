@@ -4162,5 +4162,10 @@ body.body-template-collection .index-section .grid .medium-up--three-quarters .c
 .testi-button-after-pro-cu .testimonials__item-block:hover svg.icon path {
     stroke: #C00F0C !important;
 }
+.product-form__controls-group label {
+    border: 2px solid #C00F0C;
+    border-radius: 100px;
+    color: #C00F0C !important;
+}
 /* 25-10-2025 */
 /* new updates end */
