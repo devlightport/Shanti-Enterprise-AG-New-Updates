@@ -4169,5 +4169,10 @@ body.body-template-collection .index-section .grid .medium-up--three-quarters .c
     border-radius: 100px;
     color: #C00F0C !important;
 }
+.testi-slider-cu > .container {
+    background: #f5f4ef;
+    padding: 3rem 0;
+}
+
 /* 25-10-2025 */
 /* new updates end */
