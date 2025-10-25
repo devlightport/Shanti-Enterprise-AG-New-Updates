@@ -3986,6 +3986,28 @@ section.login-popup-overlay-show .sotp-widget .ol .login-inputBox input {
     top: 5rem;
     margin: 0;
 }
-
+.category-home-sec-cu, .category-home-sec-cu .multicolumn {
+    background: #fff !important;
+}
+.category-home-sec-cu .multicolumn .multicolumn-card__info a {
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 24px;
+    border-radius: 100px;
+    width: calc(100% - 48px);
+    height: 40px;
+    color: #404040 !important;
+    border-radius: 2rem;
+    backdrop-filter: blur(3px);
+    padding: 1rem 2rem;
+    box-shadow: inset 2px 2px 1px 0 rgba(255, 255, 255, 0.4), inset -1px -1px 1px 1px rgba(255, 255, 255, 0.4) !important;
+    background: rgb(255 255 255 / 50%);
+}
+.category-home-sec-cu .multicolumn .multicolumn-card__info a:hover {
+    background: rgb(192 15 12 / 80%) !important;
+    opacity: 1 !important;
+    color: #fff !important;
+}
 /* 25-10-2025 */
 /* new updates end */
