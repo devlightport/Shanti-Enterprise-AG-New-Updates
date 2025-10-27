@@ -4190,5 +4190,8 @@ div#cb-shipping-bar .ducGSy span {
     font-family: 'Inter';
 }
 
+body.body-template-collection .index-section .grid .medium-up--three-quarters .column-grid .column-grid__item {
+    margin-bottom: 30px;
+}
 /* 27-10-2025 */
 /* new updates end */
