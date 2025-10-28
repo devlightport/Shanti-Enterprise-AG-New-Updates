@@ -4251,7 +4251,6 @@ body.body-template-collection .index-section .grid .medium-up--three-quarters .s
 .multicolumn-card.multicolumn-card--image.multicolumn-card--link > .multicolumn-card__wrapper {
     position: relative;
 }
-
 @media (max-width: 767.98px) {
 .container.spec-pro-cu .hra-col-lg-4 {
     -ms-flex: 0 0 100%;
