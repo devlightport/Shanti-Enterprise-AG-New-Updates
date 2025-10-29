@@ -150,15 +150,15 @@ jQuery(document).ready(function(){
   jQuery('.js-filter').removeAttr('open');
   /* for home page start */
   
-  $('.section-template--25264922886523__multicolumn_eL4Pec-padding style').remove();
-  $('.section-template--25264922886523__multicolumn_eL4Pec-padding').addClass('testi-slider-cu');
-  $('#shopify-section-template--25264922886523__rich_text_xEHX4W').addClass('after-banner-sec-cu');
-  $('#shopify-section-template--25264922886523__rich_text_z6y4nL').addClass('again-after-banner-sec-cu');
-  $('#shopify-section-template--25264922886523__image_with_text_Q7icgm').addClass('right-image-sixty-sec-cu');
-  $('#shopify-section-template--25264922886523__image_with_text_Rkencz').addClass('left-image-sixty-sec-cu');
-  $('#shopify-section-template--25264922886523__multicolumn').addClass('category-home-sec-cu');
-  $('#shopify-section-template--25264922886523__testimonials').addClass('testi-button-after-pro-cu');
-  $('#shopify-section-template--25264922886523__testimonials .testimonials__desc').after('<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-button-arrow"><path d="M8.22917 3.75L11.875 7.5M11.875 7.5L8.22917 11.25M11.875 7.5L3.125 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
+  $('.section-template--25271610179963__multicolumn_eL4Pec-padding style').remove();
+  $('.section-template--25271610179963__multicolumn_eL4Pec-padding').addClass('testi-slider-cu');
+  $('#shopify-section-template--25271610179963__rich_text_xEHX4W').addClass('after-banner-sec-cu');
+  $('#shopify-section-template--25271610179963__rich_text_z6y4nL').addClass('again-after-banner-sec-cu');
+  $('#shopify-section-template--25271610179963__image_with_text_Q7icgm').addClass('right-image-sixty-sec-cu');
+  $('#shopify-section-template--25271610179963__image_with_text_Rkencz').addClass('left-image-sixty-sec-cu');
+  $('#shopify-section-template--25271610179963__multicolumn').addClass('category-home-sec-cu');
+  $('#shopify-section-template--25271610179963__testimonials').addClass('testi-button-after-pro-cu');
+  $('#shopify-section-template--25271610179963__testimonials .testimonials__desc').after('<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon icon-button-arrow"><path d="M8.22917 3.75L11.875 7.5M11.875 7.5L8.22917 11.25M11.875 7.5L3.125 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
 
   /* for home page end */
 
@@ -1623,4 +1623,3 @@ jQuery(document).ready(function() {
  
 
 /*  for newsletter end */
-
